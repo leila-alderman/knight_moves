@@ -4,6 +4,16 @@ This project creates a function that returns the simplest possible set of moves 
 
 [This project](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms) is part of the [The Odin Project](https://www.theodinproject.com) curriculum.
 
+For example, given `@knight.knight_moves(["C", 3], ["D", 3])`, the program will return, 
+~~~bash
+"You made it in 3 moves! Here's your path:
+[C, 3]
+[A, 2]
+[C, 1]
+[D, 3]"
+~~~
+
+My solution for this problem relies on the principles of [breadth-first search](https://www.youtube.com/watch?v=86g8jAQug04) of a [binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree). This application limits the exponential number of leaves (move options) created in each layer of the tree of possible moves, meaning that the tree doesn't get unreasonably deep before finding a solution. In addition, I added in some optimization to limit the addition of new nodes to only those that create moves to spaces that have not yet been visited. This limits redundancy in the tree, increasing the algorithm's performance.
 
 ## Development versions
  - Ruby 2.5.3
